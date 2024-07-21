@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "16777991-e03d-46c0-a3c0-a032b24cbd60",
+		"name": "WeatherMicroService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34840796"
+	},
+	"item": [
+		{
+			"name": "weather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/weather?lat=41.57&lon=2.26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "41.57"
+						},
+						{
+							"key": "lon",
+							"value": "2.26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

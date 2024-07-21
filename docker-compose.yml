@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+      - OPENWEATHERMAP_API_KEY=${OPENWEATHERMAP_API_KEY}
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  test:
+    build: .
+    command: ["npm", "run", "test-integration"]
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/weatherDB
+      - OPENWEATHERMAP_API_KEY=${OPENWEATHERMAP_API_KEY}
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:
