@@ -25,6 +25,7 @@ Este proyecto es un microservicio en Node.js que proporciona información climá
 Ejecuta los tests de integración:
 ```bash
 npm run test-integration
+```
 
 ## Postman
 
